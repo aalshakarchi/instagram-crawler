@@ -67,6 +67,13 @@ class InsCrawler(Logging):
         self.browser = Browser(has_screen)
         self.page_height = 0
 
+    def __del__(self):
+        print('Attempting to close browser')
+        try:
+            del self.browser
+        except:
+            pass
+
     def _dismiss_login_prompt(self):
         ele_login = self.browser.find_one(".Ls00D .Szr5J")
         if ele_login:

@@ -149,7 +149,7 @@ def fetch_comments(browser, dict_post):
 
     ele_comments = browser.find(".eo2As .gElp9")
     comments = []
-    for els_comment in ele_comments[1:]:
+    for els_comment in ele_comments[1:51]: # Download first 50-100 comments
         author = browser.find_one(".FPmhX", els_comment).text
         
         temp_element = browser.find("span", els_comment)
